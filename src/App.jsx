@@ -5,6 +5,7 @@ function App() {
 	// take the url from user input
 	const url =
 		'https://www.cloudskillsboost.google/public_profiles/b3487dc3-9b6f-4b3a-90bc-8bd65c3a8aea';
+
 	const [pageData, setPageData] = useState();
 	var data;
 	useEffect(() => {
@@ -13,6 +14,7 @@ function App() {
 			setPageData(data);
 		});
 	}, []);
+
 	// when page data is fetched, export badge links and everything else
 	pageData ? (data = exportBadgeLinks(pageData)) : console.log('no data');
 
