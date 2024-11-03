@@ -1,11 +1,10 @@
 {
-	"name": "website",
-	"homepage": "https://gdg-certificates.vercel.app/",
+	"name": "gdg-certificate",
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
-		"dev": "concurrently \"npm run dev:server\" \"npm run dev:vite\"",
+		"dev": "concurrently  \"npm run dev:vite\" \"npm run dev:server\"",
 		"dev:server": "node src/server.js",
 		"dev:vite": "vite",
 		"build": "vite build",

@@ -6,8 +6,9 @@ import { Routes, Route } from 'react-router-dom';
 function Certificate() {
 	const [ProfileURL, setProfileURL] = useState();
 	// https://www.cloudskillsboost.google/public_profiles/b3487dc3-9b6f-4b3a-90bc-8bd65c3a8aea
+
 	const server = window.location.href.split('/')[2].split(':')[0];
-	console.log(server);
+
 	useEffect(() => {
 		ProfileURL
 			? fetchData(ProfileURL).then((data) => {
@@ -72,3 +73,5 @@ function Certificate() {
 }
 
 export default Certificate;
+
+// (window.location.href = '/error')

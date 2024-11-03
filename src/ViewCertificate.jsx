@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import './ViewCertificate.css';
 
 function ViewCertificate() {
 	var data = JSON.parse(localStorage.getItem('data'));
@@ -161,7 +160,7 @@ function PrintCertificate({ data }) {
 						Certificate <span id='sp1'>of</span>{' '}
 						<span id='sp2'>Achievement</span>
 					</h1>
-					<h2>NAME OF PARTICIPANT</h2>
+					<h2>{data.name}</h2>
 					<p>
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque
 						officiis illo molestias aperiam dicta voluptas. Vero, recusandae.
