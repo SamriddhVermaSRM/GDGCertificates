@@ -25,7 +25,7 @@ function Certificate() {
 		console.log('fetching data started');
 
 		try {
-			const response = await fetch('http://167.71.225.221:8080/' + url, {
+			const response = await fetch('https://167.71.225.221:8080/' + url, {
 				method: 'GET',
 			});
 			if (!response.ok) {
