@@ -15,7 +15,7 @@ function Certificate() {
 	useEffect(() => {
 		ProfileURL
 			? fetchData(ProfileURL).then((data) => {
-					data ? handleDataFetch(data) : {};
+					data ? handleDataFetch(data) : (window.location.href = '/error');
 					// window.location.href = '/error'
 			  })
 			: console.log('waiting for user input');
@@ -25,25 +25,49 @@ function Certificate() {
 		console.log('fetching data started');
 
 		try {
-			const response = await fetch('https://167.71.225.221:8080/' + url, {
+			const response = await fetch('http://167.71.225.221:8080/' + url, {
 				method: 'GET',
 			});
 			if (!response.ok) {
 				throw new Error('You might have entered an invalid or wrong URL');
 			}
 			const data = await response.text();
+			var links = [];
+			var images = [];
+			var text = [
+				'Badge for Level 3: Google Cloud Adventures',
+				'Badge for Get Started with Google Workspace Tools',
+				'Badge for Get Started with Dataplex',
+				'Badge for Get Started with Looker',
+				'Badge for Cloud Functions: 3 Ways',
+				'Badge for Monitoring in Google Cloud',
+				'Badge for Prompt Design in Vertex AI',
+				'Badge for Develop GenAI Apps with Gemini and Streamlit',
+				'Badge for Get Started with Pub/Sub',
+				'Badge for Analyze Images with the Cloud Vision API',
+				'Badge for Cloud Speech API: 3 Ways',
+				'Badge for Networking Fundamentals on Google Cloud',
+				'Badge for App Engine: 3 Ways',
+				'Badge for Get Started with API Gateway',
+				'Badge for Get Started with Cloud Storage',
+				'Badge for The Basics of Google Cloud Compute',
+			];
+			for (var i = 0; i < text.length; i++) {
+				links.push(
+					data
+						.split('"><img alt="' + text[i] + '" src="')[0]
+						.split('<a class="badge-image" href="')[1]
+				);
+				images.push(
+					data.split('"><img alt="' + text[i] + '" src="')[1].split('"')[0]
+				);
+			}
 			const name = data.split('<title>')[1].split('|')[0];
-			const links = data.split('<a class="badge-image" href="').slice(1);
-			const linkToBadge = links.map((link) => link.split('">')[0]);
-			const linkToImage = links.map(
-				(link) => link.split('src="')[1].split('"')[0]
-			);
-
 			const obj = {
 				name: name,
 				links: {
-					badges: linkToBadge,
-					images: linkToImage,
+					badges: links,
+					images: images,
 				},
 			};
 			return obj;
