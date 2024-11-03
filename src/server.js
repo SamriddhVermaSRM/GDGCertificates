@@ -16,8 +16,6 @@ function parseEnvList(env) {
 	return env.split(',');
 }
 
-// Set up rate-limiting to avoid abuse of the public CORS Anywhere server.
-
 import { createServer } from 'cors-anywhere';
 createServer({
 	originBlacklist: originBlacklist,
