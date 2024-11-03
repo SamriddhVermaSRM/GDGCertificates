@@ -7,7 +7,10 @@ function Certificate() {
 	const [ProfileURL, setProfileURL] = useState();
 	// https://www.cloudskillsboost.google/public_profiles/b3487dc3-9b6f-4b3a-90bc-8bd65c3a8aea
 
-	const server = window.location.href.split('/')[2].split(':')[0];
+	const server = window.location.href
+		.split('/')[2]
+		.split(':')[0]
+		.replace('3000', '8080');
 
 	useEffect(() => {
 		ProfileURL
@@ -21,7 +24,7 @@ function Certificate() {
 		console.log('fetching data started');
 
 		try {
-			const response = await fetch('http://' + server + ':8080/' + url, {
+			const response = await fetch('http://167.71.225.221:8080/' + url, {
 				method: 'GET',
 			});
 			if (!response.ok) {
