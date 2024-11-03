@@ -15,7 +15,8 @@ function Certificate() {
 	useEffect(() => {
 		ProfileURL
 			? fetchData(ProfileURL).then((data) => {
-					data ? handleDataFetch(data) : (window.location.href = '/error');
+					data ? handleDataFetch(data) : {};
+					// window.location.href = '/error'
 			  })
 			: console.log('waiting for user input');
 	}, [ProfileURL]);
