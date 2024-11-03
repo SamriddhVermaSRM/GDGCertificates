@@ -2,8 +2,19 @@ import { motion } from 'framer-motion';
 import './ViewCertificate.css';
 
 function ViewCertificate() {
-	const data = JSON.parse(localStorage.getItem('data'));
-	data ? {} : (window.location.href = '/certificate');
+	var data = JSON.parse(localStorage.getItem('data'));
+
+	var urldata = undefined;
+	console.log(urldata);
+	// data ? {} : (window.location.href = '/certificate');
+	if (!data) {
+		urldata = window.location.href.split('?data=')[1];
+		urldata = JSON.parse(urldata.replaceAll('%22', '"').replaceAll('%20', ' '));
+		urldata ? {} : (window.location.href = '/certificate');
+		data = urldata;
+		console.log(data);
+	}
+
 	const url = window.location.href.split('/')[2];
 	console.log(url);
 

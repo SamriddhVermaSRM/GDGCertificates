@@ -17,12 +17,11 @@ body {
 	background-repeat: no-repeat;
 	background-position: center;
 	padding: 25px;
+	height: 100vh;
 }
 
 .printbar {
 	background: white;
-	position: relative;
-	top: -100%;
 	padding: 20px;
 	display: flex;
 	flex-direction: row;
@@ -64,6 +63,7 @@ body {
 
 #root {
 	margin: 0%;
+	height: 100%;
 }
 
 .home,

@@ -1,7 +1,7 @@
 import './styles.css';
 import { motion } from 'framer-motion';
 
-function CertificateDetails({ setProfileURL, what }) {
+function CertificateDetails({ setProfileURL }) {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		const data = new FormData(event.target);
