@@ -26,7 +26,8 @@ function Home() {
 				completed the challenges and earned the badges. Keep up the good work.
 			</motion.p>
 			<motion.a
-				href='/certificate'
+				href='http://gdgoncampus-srmcem.site/certificate'
+				// /certificate
 				initial={{ y: '100px', opacity: 0 }}
 				animate={{ y: 0, opacity: 1 }}
 				exit={{ y: '100px', opacity: 0 }}

@@ -3,16 +3,11 @@ import { motion } from 'framer-motion';
 function ViewCertificate() {
 	var data = JSON.parse(localStorage.getItem('data'));
 
-	var urldata = undefined;
-	console.log(urldata);
 	// data ? {} : (window.location.href = '/certificate');
 	if (!data) {
-		urldata = window.location.href.split('?data=')[1];
-		urldata = JSON.parse(urldata.replaceAll('%22', '"').replaceAll('%20', ' '));
-		urldata ? {} : (window.location.href = '/certificate');
-		data = urldata;
-		console.log(data);
+		window.location.href = '/certificate';
 	}
+	console.log(data);
 
 	const url = window.location.href.split('/')[2];
 	console.log(url);
@@ -78,16 +73,23 @@ function ViewCertificate() {
 						</h1>
 						<h2>{data.name}</h2>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque
-							officiis illo molestias aperiam dicta voluptas. Vero, recusandae.
-							Dolor atque libero quas animi neque id fugit quo et error quae?
-							Eius.
+							For active participation in the GenAI Study Jam and commitment to
+							learning about Generative AI and Google Cloud. This achievement
+							highlights dedication to advancing knowledge in innovative
+							technologies.
 						</p>
 					</div>
-					{/* <div className='signatures'>
-						<div id='sign-gdg'></div>
-						<div id='sign-hod'></div>
-					</div> */}
+					<div className='signatures'>
+						<div id='sign-gdg'>
+							<img src='/gdg-org.png' />
+							GDG on Campus Organiser
+						</div>
+
+						<div id='sign-hod'>
+							<img src='/gdg-hod.png' />
+							Head of Department CSE & AI/ML SRMCEM
+						</div>
+					</div>
 
 					<div className='badges'>
 						{data.links.badges.map((badge, index) => {
@@ -162,16 +164,23 @@ function PrintCertificate({ data }) {
 					</h1>
 					<h2>{data.name}</h2>
 					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque
-						officiis illo molestias aperiam dicta voluptas. Vero, recusandae.
-						Dolor atque libero quas animi neque id fugit quo et error quae?
-						Eius.
+						For active participation in the GenAI Study Jam and commitment to
+						learning about Generative AI and Google Cloud. This achievement
+						highlights dedication to advancing knowledge in innovative
+						technologies.
 					</p>
 				</div>
-				{/* <div className='signatures'>
-						<div id='sign-gdg'></div>
-						<div id='sign-hod'></div>
-					</div> */}
+				<div className='signatures'>
+					<div id='sign-gdg'>
+						<img src='/gdg-org.png' />
+						GDG on Campus Organiser
+					</div>
+
+					<div id='sign-hod'>
+						<img src='/gdg-hod.png' />
+						Head of Department CSE & AI/ML SRMCEM
+					</div>
+				</div>
 
 				<div className='badges'>
 					{data.links.badges.map((badge, index) => {

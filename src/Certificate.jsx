@@ -25,9 +25,12 @@ function Certificate() {
 		console.log('fetching data started');
 
 		try {
-			const response = await fetch('http://167.71.225.221:8080/' + url, {
-				method: 'GET',
-			});
+			const response = await fetch(
+				'http://gdgoncampus-srmcem.site:8080/' + url,
+				{
+					method: 'GET',
+				}
+			);
 			if (!response.ok) {
 				throw new Error('You might have entered an invalid or wrong URL');
 			}
@@ -56,7 +59,8 @@ function Certificate() {
 				links.push(
 					data
 						.split('"><img alt="' + text[i] + '" src="')[0]
-						.split('<a class="badge-image" href="')[1]
+						.split('<a class="badge-image" href="')
+						.pop()
 				);
 				images.push(
 					data.split('"><img alt="' + text[i] + '" src="')[1].split('"')[0]
@@ -80,8 +84,7 @@ function Certificate() {
 	const handleDataFetch = (data) => {
 		console.log('fetched data');
 		localStorage.setItem('data', JSON.stringify(data));
-		var dataURL = JSON.stringify(data);
-		window.location.href = '/certificate/view?data=' + dataURL;
+		window.location.href = '/certificate/view';
 	};
 
 	return (

@@ -97,26 +97,39 @@ body {
 	font-size: 18px;
 	font-family: 'Open Sans', cursive;
 }
-
 .signatures {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
 	width: 100%;
+	text-align: center;
+	font-family: 'Google Sans Reg';
+	font-size: 15px;
 }
 
 .signatures > * {
-	height: 2px;
-	width: 100px;
-	background: black;
+	height: 40px;
+	margin: 0 20px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 
-.signatures > *::after {
-	content: 'Signature';
+.signatures > * > img {
+	height: inherit;
+}
+
+#sign-hod::after {
+	content: '';
+	width: 100%;
+	height: 2px;
+}
+
+#sign-gdg::after {
+	content: '';
+	width: 100%;
+	height: 2px;
 }
 
 .badges {
