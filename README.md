@@ -1,8 +1,16 @@
-# React + Vite
+This project was made for the certificate distribution by GDG on Campus SRMCEM. 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+It has a web scrapper that scraps the data from a official google website and exports the links and images.
+The exported data is then used to allow the user to download his certificate.
 
-Currently, two official plugins are available:
+it uses a CORS proxy to bypass the CORS policy of the google's website.
+The CORS proxy can be accessed at port 3001.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## How to run the project
+1. Clone the repository
+2. Run the following commands
+```npm i```
+```npm run build```
+```npm deploy```
+
+then headover to port 3000 to access the website.

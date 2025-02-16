@@ -15,7 +15,7 @@ function Certificate() {
 	useEffect(() => {
 		ProfileURL
 			? fetchData(ProfileURL).then((data) => {
-					data ? handleDataFetch(data) : (window.location.href = '/error');
+					// data ? handleDataFetch(data) : (window.location.href = '/error');
 					// window.location.href = '/error'
 			  })
 			: console.log('waiting for user input');
@@ -25,12 +25,9 @@ function Certificate() {
 		console.log('fetching data started');
 
 		try {
-			const response = await fetch(
-				'http://gdgoncampus-srmcem.site:8080/' + url,
-				{
-					method: 'GET',
-				}
-			);
+			const response = await fetch('http://localhost:3001/' + url, {
+				method: 'GET',
+			});
 			if (!response.ok) {
 				throw new Error('You might have entered an invalid or wrong URL');
 			}
